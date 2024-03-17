@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Űrlap</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      section {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+      }
+      .input-field {
+        margin-bottom: 20px;
+      }
+      .input-field input,
+      .input-field select,
+      .input-field datalist {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        outline: none;
+      }
+      .input-field input:focus,
+      .input-field select:focus,
+      .input-field datalist:focus {
+        border-color: #4caf50;
+      }
+      .range-slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: calc(100% - 20px);
+        height: 10px;
+        background: #ddd;
+        outline: none;
+        opacity: 0.7;
+        border-radius: 4px;
+        margin: 10px 0;
+      }
+      .range-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #4caf50;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+      .range-slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #4caf50;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Űrlap címe</h1>
+    </header>
+
+    <section>
+      <form id="myForm">
+        <label for="name" class="input-field"
+          >Név:
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            pattern="[a-zA-Z\s]+"
+            autocomplete="off"
+            placeholder="Írja be a nevét"
+        /></label>
+        <label for="pin" class="input-field"
+          >Pin kód:
+          <input
+            type="password"
+            id="pin"
+            name="pin"
+            required
+            pattern="\d{4}"
+            placeholder="4 számjegyű PIN"
+        /></label>
+
+        <label for="fruit" class="input-field"
+          >Kedvenc gyümölcs: <input list="fruits" name="fruit" id="fruit" />
+          <datalist id="fruits">
+            <option value="Alma 250Ft/kg"></option>
+            <option value="Banán 350Ft/kg"></option>
+            <option value="Citrom 450Ft/kg"></option>
+          </datalist>
+        </label>
+
+        <label for="age" class="input-field"
+          >Életkor:
+          <input type="number" id="age" name="age" min="1" max="100" step="1"
+        /></label>
+        <label for="shoeSize" class="input-field"
+          >Lábméret:
+          <input
+            type="number"
+            id="shoeSize"
+            name="shoeSize"
+            min="25"
+            max="50"
+            step="0.5"
+        /></label>
+        <label for="confidence" class="input-field"
+          >Önbizalom:
+          <input
+            type="range"
+            id="confidence"
+            name="confidence"
+            min="0"
+            max="100"
+            class="range-slider"
+        /></label>
+      </form>
+    </section>
+
+    <button form="myForm" type="submit">Elküld</button>
+    <button form="myForm" type="button" onclick="submitWithoutValidation()">
+      Elküld ellenőrzés nélkül
+    </button>
+
+    <footer>
+      <p>Források</p>
+    </footer>
+
+    <script>
+      function submitWithoutValidation() {
+        document.getElementById("myForm").submit();
+      }
+    </script>
+  </body>
+</html>

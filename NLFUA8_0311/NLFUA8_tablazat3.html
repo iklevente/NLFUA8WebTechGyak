@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Táblázat készítése, formázása</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 50px;
+        width: 300px;
+      }
+      th,
+      td {
+        padding: 5px;
+        border: 1px solid black;
+        text-align: left;
+      }
+      th {
+        background-color: #f88;
+      }
+      .scrollable {
+        max-height: 50px;
+        overflow-y: auto;
+        background-color: #ff0;
+        font-style: italic;
+      }
+      tr:nth-child(odd) td:not(.scrollable) {
+        background-color: #8f8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Táblázat elemek</h1>
+    <table>
+      <tr>
+        <th>1. oszlop fejléc</th>
+        <th>2. oszlop fejléc</th>
+        <th>3. oszlop fejléc</th>
+      </tr>
+      <tr>
+        <td><strong>1 sor 1. elem</strong></td>
+        <td class="scrollable">
+          Nagyon hosszú szöveg, ami a görgetősáv megjelenítéséhez szükséges.
+          Adjunk hozzá még több tartalmat, hogy biztosan túlcsorduljon, és
+          megjelenjen a görgetősáv.
+        </td>
+        <td><strong>1 sor 3. elem</strong></td>
+      </tr>
+      <tr>
+        <td><strong>2 sor 1. elem</strong></td>
+        <td><strong>2 sor 2. elem</strong></td>
+        <td><strong>2 sor 3. elem</strong></td>
+      </tr>
+      <tr>
+        <td><strong>3 sor 1. elem</strong></td>
+        <td>3 sor 2. elem</td>
+        <td><strong>3 sor 3. elem</strong></td>
+      </tr>
+    </table>
+  </body>
+</html>

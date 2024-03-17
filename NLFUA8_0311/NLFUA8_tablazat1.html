@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Táblázat készítése</title>
+    <style>
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 50px;
+        width: 300px;
+      }
+      th,
+      td {
+        margin: 0;
+        padding: 5px;
+        border: 1px solid black;
+        position: relative;
+      }
+      th,
+      td::before {
+        background: white;
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -5px;
+        width: 100%;
+        z-index: -1;
+        transform: translate(3px, 3px);
+      }
+      th,
+      td::after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: white;
+        transform: translate(6px, 6px);
+      }
+      .scrollable {
+        max-height: 50px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>1 sor 1. elem</td>
+        <td>1 sor 2. elem</td>
+        <td>1 sor 3. elem</td>
+      </tr>
+      <tr>
+        <td>2 sor 1. elem</td>
+        <td class="scrollable">
+          Nagyon hosszú szöveg, ami a görgetősáv megjelenítéséhez szükséges.
+          Adjunk hozzá még több tartalmat, hogy biztosan túlcsorduljon, és
+          megjelenjen a görgetősáv.
+        </td>
+        <td>2 sor 3. elem</td>
+      </tr>
+      <tr>
+        <td>3 sor 1. elem</td>
+        <td>3 sor 2. elem</td>
+        <td>3 sor 3. elem</td>
+      </tr>
+    </table>
+  </body>
+</html>
