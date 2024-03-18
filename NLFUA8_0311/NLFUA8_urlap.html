@@ -39,6 +39,12 @@
         list-style: none;
         margin-bottom: 5px;
       }
+
+      .range-label {
+        display: inline-block;
+        width: 20px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -105,14 +111,16 @@
           </label>
           <label for="confidence" class="input-field"
             >Önbizalom:
+            <span class="range-label">0</span>
             <input
               type="range"
               id="confidence"
               name="confidence"
-              min="1"
+              min="0"
               max="100"
               class="range-slider"
             />
+            <span class="range-label">100</span>
           </label>
         </form>
       </section>
