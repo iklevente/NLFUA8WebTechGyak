@@ -17,7 +17,9 @@
       <h1>Audio lejátszó</h1>
     </header>
 
-    <audio id="mainAudio" src="jazzy.mp3"></audio>
+    <audio controls id="mainAudio">
+      <source src="breaking-bad-intro.mp3" type="audio/mp3" />
+    </audio>
     <button onclick="playPauseAudio()">Lejátszás/Szünet</button>
     <button onclick="setVolume(0)">Néma</button>
     <button onclick="setVolume(0.5)">Halk</button>
