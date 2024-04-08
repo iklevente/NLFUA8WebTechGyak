@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS objektumot konvertálja JSON Text</title>
+  </head>
+  <body>
+    <script>
+      var adatok = {
+        név: "Pista",
+        irányítószám: "12345",
+        város: "Budapest",
+        egyetem: "ELTE",
+      };
+
+      var jsonText = JSON.stringify(adatok, null, 2);
+
+      console.log(jsonText);
+
+      var output = document.createElement("pre");
+      output.textContent = jsonText;
+      document.body.appendChild(output);
+    </script>
+  </body>
+</html>
