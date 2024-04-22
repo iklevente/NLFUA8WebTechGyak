@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Műveletek 3</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="3.js"></script>
+    <style>
+      #inputField {
+        border: 2px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header">Fejléc szöveg</h1>
+    <p id="paragraph1">
+      Első bekezdés. <span id="clickHere1">Kattints ide</span>
+    </p>
+    <p id="paragraph2">
+      Második bekezdés. <span id="clickHere2">Kattints ide duplán</span>
+    </p>
+    <form>
+      <input type="text" id="inputField" placeholder="Első beviteli mező" />
+      <input type="text" id="inputField2" placeholder="Második beviteli mező" />
+      <input
+        type="text"
+        id="inputField3"
+        placeholder="Harmadik beviteli mező"
+      />
+      <button type="button" id="submit">Jelentkezés</button>
+    </form>
+
+    <script>
+      $(document).on("mouseover", "button", function () {
+        alert("Gomb felé húzta az egeret");
+      });
+
+      $("#inputField").hover(
+        function () {
+          $(this).css("border-color", "blue");
+        },
+        function () {
+          $(this).css("border-color", "black");
+        }
+      );
+
+      $("#inputField").click(function () {
+        $(this).css("background-color", "yellow");
+      });
+
+      $("#header").mousedown(function () {
+        alert("Egeret húzott a fejléc szövegéről");
+      });
+
+      $("#clickHere1").click(function () {
+        $("#paragraph1").hide();
+      });
+
+      $("#clickHere2").dblclick(function () {
+        $("#paragraph2").hide();
+      });
+
+      $("#submit").click(function () {
+        alert("Jelentkezés gombra kattintottál!");
+      });
+    </script>
+  </body>
+</html>
