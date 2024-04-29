@@ -1,34 +1,33 @@
-// Az 1.5-es pontot nem lehet megvalósítani a mai böngészőkben, mert az event.pageY tulajdonság nem mérhető
+$(document).ready(function () {
+  let clickCount = 0;
 
-$(document).on("mouseover", "button", function () {
-  alert("Gomb felé húzta az egeret");
-});
+  $("#clickLbl").click(function () {
+    $("#elso").hide();
+  });
 
-$("#inputField").hover(
-  function () {
-    $(this).css("border-color", "blue");
-  },
-  function () {
-    $(this).css("border-color", "black");
-  }
-);
+  $("#clickLbl2").click(function () {
+    clickCount++;
+    if (clickCount === 2) $("#masodik").hide();
+  });
 
-$("#inputField").click(function () {
-  $(this).css("background-color", "yellow");
-});
+  $("#header").mousemove(function () {
+    window.alert("A header felé vitted az egeret");
+  });
 
-$("#header").mousedown(function () {
-  alert("Egeret húzott a fejléc szövegéről");
-});
+  $("#hover").mouseenter(function () {
+    window.alert("A gomb felé vitted az egeret");
+  });
 
-$("#clickHere1").click(function () {
-  $("#paragraph1").hide();
-});
+  $(".inputField").mouseenter(function () {
+    $(this).addClass("inputField-hover");
+  });
 
-$("#clickHere2").dblclick(function () {
-  $("#paragraph2").hide();
-});
+  $(".inputField").mouseleave(function () {
+    $(this).removeClass("inputField-hover");
+  });
 
-$("#submit").click(function () {
-  alert("Jelentkezés gombra kattintottál!");
+  $(".inputField").click(function () {
+    $(".inputField").removeClass("active");
+    $(this).addClass("active");
+  });
 });

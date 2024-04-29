@@ -1,10 +1,5 @@
-$(document).ready(function () {
-  $("#hideParagraphs").click(function () {
+$(document).ready(() => {
+  $("button").click(() => {
     $("p").hide();
-  });
-
-  $("#showPage").click(function (event) {
-    event.preventDefault();
-    $("p").show();
   });
 });

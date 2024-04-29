@@ -1,24 +1,57 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jQuery Műveletek</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>jQuery szolgáltatásai</title>
+    <script src="jquery3.7.1.js"></script>
     <script src="2.js"></script>
+    <style>
+      .table {
+        margin: 5px;
+        padding: 5px;
+      }
+      .td {
+        margin: 5px;
+        padding: 5px;
+      }
+    </style>
   </head>
   <body>
-    <ul id="list1">
-      <li>Első elem</li>
-      <li>Második elem</li>
-      <li><a href="#">Link</a></li>
+    <header id="header">jQuery feladatok</header>
+
+    <p>
+      A jQuery egy JavaScript programozói könyvtár, amelyet John Resig kezdett
+      fejleszteni.
+    </p>
+    <p>
+      <strong
+        >Elterjedtnek tekinthető, segítségével könnyen bejárható egy HTML oldal
+        DOM-ja.</strong
+      >
+    </p>
+
+    <button id="clickBtn" onclick="clickBtn()">
+      <strong>Kattints ide - a bekezdése elrejtve!</strong>
+    </button>
+    <p id="linkText">
+      Miskolci Egyetem weboldal:
+      <a href="https://www.uni-miskolc.hu/" target="_blank">Miskolci Egyetem</a>
+    </p>
+
+    <ul>
+      <li>egy</li>
+      <li>kettő</li>
+      <li>három</li>
     </ul>
-    <ul id="list2">
-      <li>Első elem</li>
-      <li>Második elem</li>
-      <li><a href="#">Link</a></li>
-    </ul>
-    <table>
+
+    <ol>
+      <li>tizedik</li>
+      <li>huszadik</li>
+      <li>harmincadik</li>
+    </ol>
+
+    <table id="table1">
       <tr>
         <td>1</td>
         <td>2</td>
@@ -45,10 +78,11 @@
         <td>15</td>
       </tr>
     </table>
-    <button id="k1">K1 gomb</button>
-    <button id="k2">K2 gomb</button>
-    <button id="k3">K3 gomb</button>
-    <button id="k4">K4 gomb</button>
-    <button id="k5">K5 gomb</button>
+
+    <button id="K1" onclick="hideK1()">K1</button>
+    <button id="K2" onclick="hideK2()">K2</button>
+    <button id="K3" onclick="hideK3()">K3</button>
+    <button id="K4" onclick="hideK4()">K4</button>
+    <button id="K5" onclick="hideK5()">K5</button>
   </body>
 </html>

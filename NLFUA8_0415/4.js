@@ -1,51 +1,35 @@
-$(document).ready(function () {
-  // Elrejt gomb - bekezdések elrejtése
-  $("#hideParagraphs").click(function () {
-    $("p").hide();
-  });
+function hide3() {
+  $("p").hide();
+}
 
-  // Megjelenít gomb - bekezdések megjelenítése
-  $("#showParagraphs").click(function () {
-    $("p").show();
-  });
+function show3() {
+  $("p").show();
+}
 
-  // Elrejt/Megjelenít gomb - bekezdések toggle
-  $("#toggleParagraphs").click(function () {
-    $("p").toggle();
-  });
+function showHide() {
+  $("p").toggle();
+}
 
-  // Áttetszőség=0.1 gomb - űrlap elhalványítása
-  $("#opacity01").click(function () {
-    $("form").css("opacity", "0.1");
-  });
+function opacity1() {
+  $("#form").css("opacity", 0.1);
+}
 
-  // Áttetszőség=0.5 gomb - űrlap erősítése
-  $("#opacity05").click(function () {
-    $("form").css("opacity", "0.5");
-  });
+function opacity2() {
+  $("#form").css("opacity", 0.5);
+}
 
-  // Áttetszőség=0.8 gomb - űrlap még erősebbé tétele
-  $("#opacity08").click(function () {
-    $("form").css("opacity", "0.8");
-  });
+function opacity3() {
+  $("#form").css("opacity", 0.8);
+}
 
-  // Elrejt gomb - űrlap elrejtése
-  $("#hideForm").click(function () {
-    $("form").hide();
-  });
+function hideForm() {
+  $("#form").hide();
+}
 
-  // Megjelenít gomb - űrlap megjelenítése
-  $("#showForm").click(function () {
-    $("form").show();
-  });
+function showForm() {
+  $("#form").show();
+}
 
-  // Elrejt/Megjelenít gomb - űrlap toggle
-  $("#toggleForm").click(function () {
-    $("form").toggle();
-  });
-
-  // Űrlap Jelentkezés gomb funkciója (nem specifikált a feladatban)
-  $("#submit").click(function () {
-    alert("Jelentkezés gombra kattintottál!");
-  });
-});
+function hideShowForm() {
+  $("#form").toggle();
+}
