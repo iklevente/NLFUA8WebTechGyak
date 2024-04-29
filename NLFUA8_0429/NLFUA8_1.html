@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON fájl betöltése gombbal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <!-- Ide fogjuk behelyezni a JSON adatait -->
+    </div>
+
+    <button id="loadDataBtn">Adatok betöltése</button>
+
+    <script>
+      $("#loadDataBtn").click(function () {
+        const jsonFileUrl = "NLFUA8_orarend.json";
+
+        $.getJSON(jsonFileUrl, function (data) {
+          const contentDiv = $("#content");
+          contentDiv.empty();
+
+          data.IKL_orarend.kurzus.forEach(function (kurzus) {
+            const kurzusHtml = `
+              <h2>${kurzus.kurzusnev}</h2>
+              <p><strong>Oktató:</strong> ${kurzus.oktato}</p>
+              <p><strong>Időpont:</strong> ${kurzus.idopont.nap} ${kurzus.idopont.tol}-${kurzus.idopont.ig} óra</p>
+              <p><strong>Helyszín:</strong> ${kurzus.helyszin}</p>
+              <p><strong>Szak:</strong> ${kurzus.szak}</p>
+            `;
+
+            const cim = kurzus.cim;
+            const cimHtml = `
+              <p><strong>Cím:</strong> ${cim.street}, ${cim.city}, ${cim.code}</p>
+            `;
+
+            let phoneNumberHtml = "<p><strong>Telefonszámok:</strong></p>";
+            kurzus["phone number"].forEach((phone) => {
+              phoneNumberHtml += `<p>${phone.type}: ${phone.number}</p>`;
+            });
+
+            contentDiv.append(kurzusHtml);
+            contentDiv.append(cimHtml);
+            contentDiv.append(phoneNumberHtml);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

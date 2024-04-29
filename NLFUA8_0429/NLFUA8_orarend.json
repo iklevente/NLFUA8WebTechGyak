@@ -1,0 +1,110 @@
+{
+  "IKL_orarend": {
+    "kurzus": [
+      {
+        "kurzusnev": "Web technológia alapjai",
+        "idopont": {
+          "nap": "Hétfő",
+          "tol": 14,
+          "ig": 16
+        },
+        "helyszin": "In103",
+        "oktato": "Dr. Benerik László",
+        "szak": "MI",
+        "cim": {
+          "street": "Egyetemváros",
+          "city": "Miskolc",
+          "code": "1021"
+        },
+        "phone number": [
+          {
+            "type": "Mobil",
+            "number": "0630 123-4567"
+          },
+          {
+            "type": "Vezetékes",
+            "number": "0630 555-4567"
+          }
+        ]
+      },
+      {
+        "kurzusnev": "Adatbázis rendszerek",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": 10,
+          "ig": 12
+        },
+        "helyszin": "In107",
+        "oktato": "Dr. Halmos Mária",
+        "szak": "Informatika",
+        "cim": {
+          "street": "Egyetemváros",
+          "city": "Miskolc",
+          "code": "1021"
+        },
+        "phone number": [
+          {
+            "type": "Mobil",
+            "number": "0630 234-5678"
+          },
+          {
+            "type": "Vezetékes",
+            "number": "0630 555-5678"
+          }
+        ]
+      },
+      {
+        "kurzusnev": "Mesterséges Intelligencia alapjai",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": 16,
+          "ig": 18
+        },
+        "helyszin": "In201",
+        "oktato": "Dr. Kerekes Attila",
+        "szak": "MI",
+        "cim": {
+          "street": "Egyetemváros",
+          "city": "Miskolc",
+          "code": "1021"
+        },
+        "phone number": [
+          {
+            "type": "Mobil",
+            "number": "0630 345-6789"
+          },
+          {
+            "type": "Vezetékes",
+            "number": "0630 555-6789"
+          }
+        ]
+      },
+      {
+        "kurzusnev": "Programozás I",
+        "idopont": {
+          "nap": "Csütörtök",
+          "tol": 8,
+          "ig": 10
+        },
+        "helyszin": "In205",
+        "oktato": "Dr. Simon Eszter",
+        "szak": "Informatika",
+        "cim": {
+          "street": "Egyetemváros",
+          "city": "Miskolc",
+          "code": "1021"
+        },
+        "phone number": [
+          {
+            "type": "Mobil",
+            "number": "0630 456-7890"
+          },
+          {
+            "type": "Vezetékes",
+            "number": "0630 555-7890"
+          }
+        ]
+      }
+    ]
+  }
+}
