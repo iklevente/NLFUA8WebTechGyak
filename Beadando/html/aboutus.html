@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      type="image/png"
+      sizes="32x32"
+      rel="icon"
+      href="../images/mesmall.jpg"
+    />
+    <style>
+      #about-us {
+        background-color: rgba(240, 240, 240, 0.9);
+        padding: 50px 0;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      #about-us .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      #about-us h2 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      #about-us .content-container {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+      }
+
+      #about-us img {
+        float: right;
+        margin-left: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+      }
+
+      #about-us p {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+
+      #video-section .container {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .video-container {
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+      }
+
+      #myVideo {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .video-controls button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .video-controls button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+    <title>MEStore</title>
+  </head>
+  <body
+    data-aos-easing="ease"
+    data-aos-duration="400"
+    data-aos-delay="0"
+    class="body__move"
+  >
+    <script>
+      AOS.init();
+    </script>
+
+    <header>
+      <div class="topnav__main">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <span class="call__number"
+          >Hívjon minket: <a href="">+36 30 645 8473</a></span
+        >
+      </div>
+
+      <div class="main__nav">
+        <i
+          class="fa fa-align-center icon__toggler"
+          style="font-size: 2rem"
+          onclick="Change()"
+        ></i>
+        <ul>
+          <li onclick="getValue('')">
+            <a href="buttonSlider.html">Termékeink</a>
+          </li>
+          <li><a href="aboutus.html">Rólunk</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+
+        <a href="index.html" class="regular__logo" style="display: block">
+          <div class="regular__logo">
+            <img src="../images/smallogo.png" />
+          </div>
+        </a>
+        <div class="icons">
+          <i class="fa fa-search icon__item" onclick="showSearchBar()"></i>
+          <i
+            class="fa fa-shopping-cart icon__item"
+            id="cart-button"
+            onclick="toggleCart()"
+          ></i>
+        </div>
+      </div>
+    </header>
+
+    <section id="about-us">
+      <div class="container">
+        <h2>About Us</h2>
+        <div class="content-container">
+          <div class="about-content">
+            <img
+              src="../images/about/aboutus.webp"
+              alt="About Us Image"
+              style="width: 30%"
+              data-aos="fade-left"
+            />
+            <p>
+              Üdvözöljük a MEStore-ban, a legmodernebb és leghatékonyabb
+              elektronikai cikkek és kütyük. We elkötelezettek vagyunk amellett,
+              hogy a legújabb és legnagyszerűbb technológiát kínáljuk Önnek,
+              szenvedéllyel és szakértelemmel.
+            </p>
+          </div>
+          <p>
+            Az utunk egy egyszerű ötlettel kezdődött: hogy az olyan ügyfeleknek,
+            mint önök, a következő szolgáltatásokat nyújtsuk olyan csúcsminőségű
+            termékekhez juthassanak hozzá, amelyek javítják az életstílusukat.
+            Az okostelefonoktól kezdve az okosotthonok eszközeiig minden egyes
+            terméket kézzel válogatunk, hogy hogy megfeleljen a kiválóságra
+            vonatkozó szabványainknak.
+          </p>
+          <p>
+            A MEStore-nál mindenekelőtt az innovációt és a vásárlói
+            elégedettséget tartjuk fontosnak. mindenekelőtt. Szakértőink csapata
+            mindig a következő nagyszabású dolog után, hogy Ön is a korábbinál
+            előrébb járhasson. Csatlakozzon hozzánk ezen az izgalmas utazáshoz,
+            és tapasztalja meg a technológia jövőjét még ma.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="video-section">
+      <div class="container">
+        <h2>A videónk</h2>
+        <div class="video-container">
+          <video id="myVideo" controls>
+            <source src="../images/about/1.mp4" type="video/mp4" />
+            Your browser does not support the video.
+          </video>
+          <div class="video-controls">
+            <button onclick="playVideo()">Lejátszás</button>
+            <button onclick="pauseVideo()">Megállít</button>
+            <button onclick="stopVideo()">Stop</button>
+            <button onclick="speedUp()">Gyorsít</button>
+            <button onclick="slowDown()">Lassít</button>
+            <button onclick="resetSpeed()">Normál sebesség</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="search-area">
+      <div class="search-row">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search products..."
+        />
+        <button class="search-button">Keresés</button>
+        <button
+          class="search-button"
+          style="margin-top: 2px"
+          onclick="hideSearchBar()"
+        >
+          Close
+        </button>
+      </div>
+      <div class="search-results"></div>
+    </section>
+    <div id="cart" class="cart-hidden">
+      <div class="cart-row">
+        <h2 style="text-align: center">A kosarad</h2>
+        <i
+          class="fa fa-close icon__item"
+          id="cart-button"
+          onclick="toggleCart()"
+        ></i>
+      </div>
+
+      <ul id="cart-items"></ul>
+      <h3 style="margin: auto; padding: 10px 0px" id="cart-total">
+        Összesen: $0
+      </h3>
+      <button id="clear-cart" onclick="clearCart()">Kosár ürítése</button>
+    </div>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="../images/logo.png" alt="" />
+        <h4>Kapcsolat</h4>
+        <p><strong>Cím: </strong>Egyetemváros, Miskolc</p>
+        <p><strong>Telefonszám: </strong>+36 30 645 8473</p>
+        <p><strong>Nyitvatartás: </strong>10:00 - 18:00, Hétfő - Péntek</p>
+        <div class="follow">
+          <h4>Kövess minket</h4>
+          <div class="icon">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-pinterest"></i>
+            <i class="fa fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>Rólunk</h4>
+        <a href="aboutus.html">Rólunk</a>
+        <a href="#abc">Szállítási információk</a>
+        <a href="#abc">Adatvédelmi Szabályzat</a>
+        <a href="#abc">Általános Szerződési Feltételek</a>
+        <a href="contact.html">Kapcsolat</a>
+      </div>
+
+      <div class="col">
+        <h4>Saját fiók</h4>
+        <a href="#abc">Bejelentkezés</a>
+        <a href="#abc" onclick="toggleCart()">Kosár megtekintése</a>
+        <a href="#abc">Kívánságlistám</a>
+        <a href="#abc">Rendelés nyomonkövetése</a>
+        <a href="#abc">Segítség</a>
+      </div>
+      <div class="col install">
+        <h4>Töltse le az appot</h4>
+        <p>Az AppStore-ból vagy a Google Play-ből</p>
+        <div class="row">
+          <img src="../images/pay/app.jpg" alt="" />
+          <img src="../images/pay/play.jpg" alt="" />
+        </div>
+        <p>Biztonságos és védett fizetés.</p>
+        <img src="../images/pay/pay.png" alt="" />
+      </div>
+      <div class="copyright">
+        <p>@ Ilyó-Kovács Levente</p>
+      </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+      var video = document.getElementById("myVideo");
+
+      function playVideo() {
+        video.play();
+      }
+
+      function pauseVideo() {
+        video.pause();
+      }
+
+      function stopVideo() {
+        video.pause();
+        video.currentTime = 0; // Reset the video to start
+      }
+
+      function speedUp() {
+        video.playbackRate += 0.5;
+      }
+
+      function slowDown() {
+        video.playbackRate -= 0.5;
+      }
+
+      function resetSpeed() {
+        video.playbackRate = 1;
+      }
+    </script>
+  </body>
+</html>

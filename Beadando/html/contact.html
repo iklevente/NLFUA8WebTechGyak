@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEStore - Kapcsolat</title>
+    <link
+      rel="icon"
+      href="../images/mesmall.jpg"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <style>
+      #contactUs {
+        background-color: rgba(169, 169, 169, 0.1);
+        padding: 50px;
+        border-radius: 10px;
+        margin: 50px auto;
+        max-width: 600px;
+      }
+      .form-block,
+      #contact-info {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      .form-block label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-block input,
+      .form-block textarea,
+      .form-block button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body
+    data-aos-easing="ease"
+    data-aos-duration="400"
+    data-aos-delay="0"
+    class="body__move"
+  >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <header>
+      <div class="topnav__main">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <span class="call__number"
+          >Hívjon minket: <a href="">+36 30 645 8473</a></span
+        >
+      </div>
+
+      <div class="main__nav">
+        <i
+          class="fa fa-align-center icon__toggler"
+          style="font-size: 2rem"
+          onclick="Change()"
+        ></i>
+        <ul>
+          <li onclick="getValue('')">
+            <a href="buttonSlider.html">Termékeink</a>
+          </li>
+          <li><a href="aboutus.html">Rólunk</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+
+        <a href="index.html" class="regular__logo" style="display: block">
+          <div class="regular__logo">
+            <img src="../images/smallogo.png" />
+          </div>
+        </a>
+        <div class="icons">
+          <i class="fa fa-search icon__item" onclick="showSearchBar()"></i>
+          <i
+            class="fa fa-shopping-cart icon__item"
+            id="cart-button"
+            onclick="toggleCart()"
+          ></i>
+        </div>
+      </div>
+    </header>
+
+    <section id="contactUs" data-aos="fade-up">
+      <div id="contact-info">
+        <!-- Ide kerülnek a JSON adatok -->
+      </div>
+      <form id="contact-form" class="form-block">
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required />
+          <span id="email-error" class="error"></span>
+        </div>
+        <div>
+          <label for="message">Üzenet:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Küldés" />
+        </div>
+      </form>
+
+      <div class="form-block">
+        <label for="single-input">Egy soros beviteli mező:</label>
+        <input type="text" id="single-input" name="single-input" />
+        <label for="multi-input">Több soros beviteli mező:</label>
+        <textarea id="multi-input" name="multi-input"></textarea>
+        <label for="datalist-input">Adatlistás mező:</label>
+        <input
+          type="text"
+          list="colors"
+          id="datalist-input"
+          name="datalist-input"
+        />
+        <datalist id="colors">
+          <option value="Piros"></option>
+          <option value="Zöld"></option>
+          <option value="Kék"></option>
+        </datalist>
+        <label for="checkbox-input">Jelölőnégyzet:</label>
+        <input type="checkbox" id="checkbox-input" name="checkbox-input" />
+        <label for="radio-input">Rádiógomb:</label>
+        <input type="radio" id="radio-input" name="radio-input" />
+        <label for="color-input">Színválasztó:</label>
+        <input type="color" id="color-input" name="color-input" />
+        <label for="date-input">Dátumválasztás:</label>
+        <input type="date" id="date-input" name="date-input" />
+        <button type="button">Gomb</button>
+      </div>
+      <ol>
+        <li>Első elem</li>
+        <li>Második elem</li>
+        <li>Harmadik elem</li>
+      </ol>
+    </section>
+
+    <section id="search-area">
+      <div class="search-row">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search products..."
+        />
+        <button class="search-button">Keresés</button>
+        <button
+          class="search-button"
+          style="margin-top: 2px"
+          onclick="hideSearchBar()"
+        >
+          Close
+        </button>
+      </div>
+      <div class="search-results"></div>
+    </section>
+    <div id="cart" class="cart-hidden">
+      <div class="cart-row">
+        <h2 style="text-align: center">A kosarad</h2>
+        <i
+          class="fa fa-close icon__item"
+          id="cart-button"
+          onclick="toggleCart()"
+        ></i>
+      </div>
+
+      <ul id="cart-items"></ul>
+      <h3 style="margin: auto; padding: 10px 0px" id="cart-total">
+        Összesen: $0
+      </h3>
+      <button id="clear-cart" onclick="clearCart()">Kosár ürítése</button>
+    </div>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="../images/logo.png" alt="" />
+        <h4>Kapcsolat</h4>
+        <p><strong>Cím: </strong>Egyetemváros, Miskolc</p>
+        <p><strong>Telefonszám: </strong>+36 30 645 8473</p>
+        <p><strong>Nyitvatartás: </strong>10:00 - 18:00, Hétfő - Péntek</p>
+        <div class="follow">
+          <h4>Kövess minket</h4>
+          <div class="icon">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-pinterest"></i>
+            <i class="fa fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>Rólunk</h4>
+        <a href="aboutus.html">Rólunk</a>
+        <a href="#abc">Szállítási információk</a>
+        <a href="#abc">Adatvédelmi Szabályzat</a>
+        <a href="#abc">Általános Szerződési Feltételek</a>
+        <a href="contact.html">Kapcsolat</a>
+      </div>
+
+      <div class="col">
+        <h4>Saját fiók</h4>
+        <a href="#abc">Bejelentkezés</a>
+        <a href="#abc" onclick="toggleCart()">Kosár megtekintése</a>
+        <a href="#abc">Kívánságlistám</a>
+        <a href="#abc">Rendelés nyomonkövetése</a>
+        <a href="#abc">Segítség</a>
+      </div>
+      <div class="col install">
+        <h4>Töltse le az appot</h4>
+        <p>Az AppStore-ból vagy a Google Play-ből</p>
+        <div class="row">
+          <img src="../images/pay/app.jpg" alt="" />
+          <img src="../images/pay/play.jpg" alt="" />
+        </div>
+        <p>Biztonságos és védett fizetés.</p>
+        <img src="../images/pay/pay.png" alt="" />
+      </div>
+      <div class="copyright">
+        <p>@ Ilyó-Kovács Levente</p>
+      </div>
+    </footer>
+
+    <script>
+      $(document).ready(function () {
+        AOS.init();
+
+        // JSON adatok betöltése AJAX segítségével
+        //A megjelenő konzol hibaüzenet a böngésző azonos eredetre vonatkozó házirendjének köszönhető, amely korlátozza,
+        //hogy az egyik forrásból betöltött dokumentum vagy szkript hogyan léphet kapcsolatba egy másik forrásból származó erőforrásokkal.
+        //Az mi esetünkben, mivel a HTML-fájlt közvetlenül a fájlrendszeréből nyitjuk meg (a file:/// protokoll használatával), a helyi JSON-fájlhoz intézett AJAX-kérelem blokkolva van.
+        $.ajax({
+          url: "company.json",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            let content = `<p>Cím: ${data.address}</p><p>Telefon: ${data.phone}</p><p>Város: ${data.city}</p>`;
+            $("#contact-info").html(content);
+          },
+        });
+
+        $("#contact-form").submit(function (event) {
+          event.preventDefault();
+          let email = $("#email").val();
+          let message = $("#message").val();
+
+          if (email.length === 0 || !email.includes("@")) {
+            $("#email").addClass("error");
+            $("#email-error").text("Érvényes email cím megadása kötelező!");
+          } else {
+            $("#email").removeClass("error");
+            $("#email-error").text("");
+
+            $.ajax({
+              url: "submit.php",
+              type: "POST",
+              data: {
+                email: email,
+                message: message,
+              },
+              success: function (response) {
+                alert("Üzenet elküldve: " + response);
+              },
+              error: function () {
+                alert("Hiba történt az adatok elküldésekor.");
+              },
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
