@@ -287,10 +287,20 @@
                 message: message,
               },
               success: function (response) {
-                alert("Üzenet elküldve: " + response);
+                alert(
+                  "Az üzenet a következő adatokkal lett elküldve:\nEmail: " +
+                    email +
+                    "\nÜzenet: " +
+                    message
+                );
               },
               error: function () {
-                alert("Hiba történt az adatok elküldésekor.");
+                alert(
+                  "Az üzenet a következő adatokkal lett volna elküldve:\nEmail: " +
+                    email +
+                    "\nÜzenet: " +
+                    message
+                );
               },
             });
           }
